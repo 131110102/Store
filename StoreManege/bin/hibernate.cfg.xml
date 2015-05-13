@@ -24,6 +24,11 @@
 		<mapping resource="com/demo/model/Sell.hbm.xml" />
 		<mapping resource="com/demo/model/Customer.hbm.xml" />
 		<mapping resource="com/demo/model/Product.hbm.xml" />
+		<mapping resource="com/demo/dao/Supplier.hbm.xml" />
+		<mapping resource="com/demo/dao/Sell.hbm.xml" />
+		<mapping resource="com/demo/dao/Product.hbm.xml" />
+		<mapping resource="com/demo/dao/Purchase.hbm.xml" />
+		<mapping resource="com/demo/dao/Customer.hbm.xml" />
 
 	</session-factory>
 

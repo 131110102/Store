@@ -1,14 +1,12 @@
 package com.demo.dao;
 
+import java.util.Date;
 import java.util.List;
-
 import org.hibernate.LockMode;
 import org.hibernate.Query;
 import org.hibernate.criterion.Example;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.demo.model.Sell;
 
 /**
  * A data access object (DAO) providing persistence and search support for Sell
@@ -51,7 +49,7 @@ public class SellDAO extends BaseHibernateDAO {
 		}
 	}
 
-	public Sell findById(java.lang.Integer id) {
+	public Sell findById(java.lang.String id) {
 		log.debug("getting Sell instance with id: " + id);
 		try {
 			Sell instance = (Sell) getSession().get("com.demo.dao.Sell", id);
