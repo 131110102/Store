@@ -1,13 +1,13 @@
 import com.demo.model.Product;
 
 
-public class ProductManage 
+public class ProductManage implements Manage
 {
-	public void addProduct(Product p) throws Exception
+	public void add(Object p) throws Exception
 	{
 		hbOperation hb=new hbOperation();
 		//java.util.List list=hb.findOperation("from Product where productname='"+p.getProductname()+"'");
-		if(findProductByPname(p.getProductname())==null)
+		if(find(((Product) p).getProductname())==null)
 		{
 		
 			hb.saveOperation(p);
@@ -20,12 +20,12 @@ public class ProductManage
 	
 	
 	
-	public void updateProduct(Product p) throws Exception
+	public void update(Object p) throws Exception
 	{
 		hbOperation hb=new hbOperation();
 		
 		//java.util.List list=hb.findOperation("from Product where productname='"+p.getProductname()+"'");
-		if(findProductByPname(p.getProductname())!=null)
+		if(find(((Product) p).getProductname())!=null)
 		{
 		
 			hb.updateOperation(p);
@@ -36,7 +36,7 @@ public class ProductManage
 	}
 	
 	
-	public Product findProductByPname(String n)
+	public Product find(String n)
 	{
 		hbOperation hb=new hbOperation();
 		
@@ -50,11 +50,11 @@ public class ProductManage
 		return temp;
 	}
 	
-	public void delateProduct(String n) throws Exception
+	public void delate(String n) throws Exception
 	{
 		hbOperation hb=new hbOperation();
 		Product t=null;
-		t=findProductByPname(n);
+		t=find(n);
 		if(t!=null)
 		{
 			hb.delateOperation(t);
@@ -63,4 +63,7 @@ public class ProductManage
 		}
 		hb.endSession();
 	}
+
+
+
 }

@@ -2,13 +2,13 @@ import com.demo.model.Customer;
 import com.demo.model.Supplier;
 
 
-public class CustomerManage 
+public class CustomerManage implements Manage
 {
-	public void addCustomer(Customer c) throws Exception
+	public void add(Object c) throws Exception
 	{
 		hbOperation hb=new hbOperation();
 		//java.util.List list=hb.findOperation("from Product where productname='"+p.getProductname()+"'");
-		if(findProductByCname(c.getCompanyname())==null)
+		if(find(((Customer) c).getCompanyname())==null)
 		{
 		
 			hb.saveOperation(c);
@@ -21,12 +21,12 @@ public class CustomerManage
 	
 	
 	
-	public void updateCustomer(Customer c) throws Exception
+	public void update(Object c) throws Exception
 	{
 		hbOperation hb=new hbOperation();
 		
 		//java.util.List list=hb.findOperation("from Product where productname='"+p.getProductname()+"'");
-		if(findProductByCname(c.getCompanyname())!=null)
+		if(find(((Customer) c).getCompanyname())!=null)
 		{
 		
 			hb.updateOperation(c);
@@ -37,7 +37,7 @@ public class CustomerManage
 	}
 	
 	
-	public Customer findProductByCname(String n)
+	public Customer find(String n)
 	{
 		hbOperation hb=new hbOperation();
 		
@@ -51,11 +51,11 @@ public class CustomerManage
 		return temp;
 	}
 	
-	public void delateCustomer(String n) throws Exception
+	public void delate(String n) throws Exception
 	{
 		hbOperation hb=new hbOperation();
 		Customer t=null;
-		t=findProductByCname(n);
+		t=find(n);
 		if(t!=null)
 		{
 			hb.delateOperation(t);

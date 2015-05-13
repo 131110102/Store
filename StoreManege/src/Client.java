@@ -12,7 +12,7 @@ public class Client {
 		ProductManage m=new ProductManage();
 		Product p=new Product("ddd");
 		try {
-			m.updateProduct(p);
+			m.update(p);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println(e.toString());

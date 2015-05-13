@@ -1,7 +1,7 @@
 import com.demo.model.Supplier;
 
 
-public class SupplierManage 
+public class SupplierManage implements Manage
 {
 	/*public void addSupplier(Supplier sup)
 	{
@@ -15,11 +15,11 @@ public class SupplierManage
 		hb.endSession();*
 	}*/
 	
-	public void addSupplier(Supplier s) throws Exception
+	public void add(Object s) throws Exception
 	{
 		hbOperation hb=new hbOperation();
 		//java.util.List list=hb.findOperation("from Product where productname='"+p.getProductname()+"'");
-		if(findProductBySname(s.getCompanyname())==null)
+		if(find(((Supplier) s).getCompanyname())==null)
 		{
 		
 			hb.saveOperation(s);
@@ -32,12 +32,12 @@ public class SupplierManage
 	
 	
 	
-	public void updateSupplier(Supplier s) throws Exception
+	public void update(Object s) throws Exception
 	{
 		hbOperation hb=new hbOperation();
 		
 		//java.util.List list=hb.findOperation("from Product where productname='"+p.getProductname()+"'");
-		if(findProductBySname(s.getCompanyname())!=null)
+		if(find(((Supplier) s).getCompanyname())!=null)
 		{
 		
 			hb.updateOperation(s);
@@ -48,7 +48,7 @@ public class SupplierManage
 	}
 	
 	
-	public Supplier findProductBySname(String n)
+	public Supplier find(String n)
 	{
 		hbOperation hb=new hbOperation();
 		
@@ -62,11 +62,11 @@ public class SupplierManage
 		return temp;
 	}
 	
-	public void delateSupplier(String n) throws Exception
+	public void delate(String n) throws Exception
 	{
 		hbOperation hb=new hbOperation();
 		Supplier t=null;
-		t=findProductBySname(n);
+		t=find(n);
 		if(t!=null)
 		{
 			hb.delateOperation(t);
