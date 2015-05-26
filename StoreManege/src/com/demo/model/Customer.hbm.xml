@@ -25,11 +25,11 @@
         <property name="phone" type="java.lang.String">
             <column name="PHONE" length="50" />
         </property>
-        <set name="sells" inverse="true">
+        <set name="purchases" inverse="true">
             <key>
-                <column name="CUSTOMERNAME" length="50" not-null="true" />
+                <column name="CUSTOMER" length="50" not-null="true" />
             </key>
-            <one-to-many class="com.demo.model.Sell" />
+            <one-to-many class="com.demo.model.Purchase" />
         </set>
     </class>
 </hibernate-mapping>

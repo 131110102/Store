@@ -15,7 +15,6 @@ public class Product implements java.io.Serializable {
 	private String spec;
 	private String unit;
 	private String memo;
-	private Set sells = new HashSet(0);
 	private Set purchases = new HashSet(0);
 
 	// Constructors
@@ -31,12 +30,11 @@ public class Product implements java.io.Serializable {
 
 	/** full constructor */
 	public Product(String productname, String spec, String unit, String memo,
-			Set sells, Set purchases) {
+			Set purchases) {
 		this.productname = productname;
 		this.spec = spec;
 		this.unit = unit;
 		this.memo = memo;
-		this.sells = sells;
 		this.purchases = purchases;
 	}
 
@@ -72,14 +70,6 @@ public class Product implements java.io.Serializable {
 
 	public void setMemo(String memo) {
 		this.memo = memo;
-	}
-
-	public Set getSells() {
-		return this.sells;
-	}
-
-	public void setSells(Set sells) {
-		this.sells = sells;
 	}
 
 	public Set getPurchases() {

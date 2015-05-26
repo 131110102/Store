@@ -10,8 +10,8 @@ public class Purchase implements java.io.Serializable {
 
 	// Fields
 
-	private Integer orderno;
-	private Supplier supplier;
+	private String orderno;
+	private Customer customer;
 	private Product product;
 	private Float quantity;
 	private Double unitprice;
@@ -25,17 +25,17 @@ public class Purchase implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public Purchase(Integer orderno, Supplier supplier, Product product) {
+	public Purchase(String orderno, Customer customer, Product product) {
 		this.orderno = orderno;
-		this.supplier = supplier;
+		this.customer = customer;
 		this.product = product;
 	}
 
 	/** full constructor */
-	public Purchase(Integer orderno, Supplier supplier, Product product,
+	public Purchase(String orderno, Customer customer, Product product,
 			Float quantity, Double unitprice, Date orderdate, String memo) {
 		this.orderno = orderno;
-		this.supplier = supplier;
+		this.customer = customer;
 		this.product = product;
 		this.quantity = quantity;
 		this.unitprice = unitprice;
@@ -45,20 +45,20 @@ public class Purchase implements java.io.Serializable {
 
 	// Property accessors
 
-	public Integer getOrderno() {
+	public String getOrderno() {
 		return this.orderno;
 	}
 
-	public void setOrderno(Integer orderno) {
+	public void setOrderno(String orderno) {
 		this.orderno = orderno;
 	}
 
-	public Supplier getSupplier() {
-		return this.supplier;
+	public Customer getCustomer() {
+		return this.customer;
 	}
 
-	public void setSupplier(Supplier supplier) {
-		this.supplier = supplier;
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 
 	public Product getProduct() {

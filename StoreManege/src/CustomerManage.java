@@ -1,5 +1,5 @@
 import com.demo.model.Customer;
-import com.demo.model.Supplier;
+
 
 
 public class CustomerManage implements Manage

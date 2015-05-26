@@ -19,12 +19,6 @@
         <property name="memo" type="java.lang.String">
             <column name="MEMO" length="65535" />
         </property>
-        <set name="sells" inverse="true">
-            <key>
-                <column name="PRODUCTNAME" length="20" not-null="true" />
-            </key>
-            <one-to-many class="com.demo.model.Sell" />
-        </set>
         <set name="purchases" inverse="true">
             <key>
                 <column name="PRODUCTNAME" length="20" not-null="true" />

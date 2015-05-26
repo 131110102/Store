@@ -20,15 +20,9 @@
 		</property>
 		<property name="myeclipse.connection.profile">STDB</property>
 		<mapping resource="com/demo/model/Purchase.hbm.xml" />
-		<mapping resource="com/demo/model/Supplier.hbm.xml" />
-		<mapping resource="com/demo/model/Sell.hbm.xml" />
 		<mapping resource="com/demo/model/Customer.hbm.xml" />
 		<mapping resource="com/demo/model/Product.hbm.xml" />
-		<mapping resource="com/demo/dao/Supplier.hbm.xml" />
-		<mapping resource="com/demo/dao/Sell.hbm.xml" />
-		<mapping resource="com/demo/dao/Product.hbm.xml" />
-		<mapping resource="com/demo/dao/Purchase.hbm.xml" />
-		<mapping resource="com/demo/dao/Customer.hbm.xml" />
+		<mapping resource="com/demo/model/User.hbm.xml" />
 
 	</session-factory>
 
